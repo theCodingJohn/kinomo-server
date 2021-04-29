@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "mongoose": "^5.12.6",
+    "mongoose-unique-validator": "^2.0.3"
+  }
+}
