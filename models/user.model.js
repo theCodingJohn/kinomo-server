@@ -12,13 +12,16 @@ const schema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  passwordHash: {
+  password_hash: {
     type: String,
     required: true,
   },
+  date_created: {
+    type: Date,
+    default: date.now,
+  },
   name: String,
   bio: String,
-  gender: String,
   avatar: String,
 });
 
