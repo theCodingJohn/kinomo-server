@@ -23,6 +23,12 @@ const schema = new mongoose.Schema({
   name: String,
   bio: String,
   avatar: String,
+  movies: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Movie",
+    },
+  ],
 });
 
 schema.set("toJSON", {
