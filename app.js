@@ -5,8 +5,10 @@ import morgan from "morgan";
 import logger from "./utils/logger.js";
 import config from "./utils/config.js";
 import middleware from "./utils/middleware.js";
+import "./utils/passport.js";
 
 import registerRouter from "./controllers/register.controller.js";
+import loginRouter from "./controllers/login.controller.js";
 
 const app = express();
 
@@ -33,6 +35,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/register", registerRouter);
+app.use("/login", loginRouter);
 
 app.use(middleware.unknownEndpoint);
 
