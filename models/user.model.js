@@ -12,10 +12,7 @@ const schema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  password_hash: {
-    type: String,
-    required: true,
-  },
+  password_hash: String,
   date_created: {
     type: Date,
     default: Date.now,

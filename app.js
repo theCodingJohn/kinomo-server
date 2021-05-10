@@ -6,6 +6,8 @@ import logger from "./utils/logger.js";
 import config from "./utils/config.js";
 import middleware from "./utils/middleware.js";
 
+import registerRouter from "./controllers/register.controller.js";
+
 const app = express();
 
 const mongoUri = config.MONGODB_URI;
@@ -29,6 +31,8 @@ app.use(morgan("dev"));
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use("/register", registerRouter);
 
 app.use(middleware.unknownEndpoint);
 
