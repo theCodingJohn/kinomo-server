@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import passport from "passport";
 import cors from "cors";
 import morgan from "morgan";
 import logger from "./utils/logger.js";
@@ -9,6 +10,7 @@ import "./utils/passport.js";
 
 import registerRouter from "./controllers/register.controller.js";
 import loginRouter from "./controllers/login.controller.js";
+import movieRouter from "./controllers/movie.controller.js";
 
 const app = express();
 
@@ -36,6 +38,12 @@ app.use(express.json());
 
 app.use("/register", registerRouter);
 app.use("/login", loginRouter);
+
+app.use(
+  "/movies",
+  passport.authenticate("jwt", { session: false }),
+  movieRouter
+);
 
 app.use(middleware.unknownEndpoint);
 

@@ -3,11 +3,14 @@ import mongoose from "mongoose";
 const schema = new mongoose.Schema({
   plays: Number,
   last_watched_at: Date,
-  last_updated_at: Date,
+  last_updated_at: {
+    type: Date,
+    default: Date.now,
+  },
   movie: {
     title: String,
     year: Number,
-    id: {
+    ids: {
       tmdb: Number,
     },
   },
