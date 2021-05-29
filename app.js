@@ -39,6 +39,9 @@ app.use(express.json());
 app.use("/register", registerRouter);
 app.use("/login", loginRouter);
 
+app.use(middleware.unknownEndpoint);
+app.use(middleware.errorHandler);
+
 app.use(
   "/movies",
   passport.authenticate("jwt", { session: false }),
