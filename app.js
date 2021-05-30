@@ -11,6 +11,7 @@ import "./utils/passport.js";
 import registerRouter from "./controllers/register.controller.js";
 import loginRouter from "./controllers/login.controller.js";
 import movieRouter from "./controllers/movie.controller.js";
+import userRouter from "./controllers/user.controller.js";
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.use(express.json());
 
 app.use("/register", registerRouter);
 app.use("/login", loginRouter);
+app.use("/users", userRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
