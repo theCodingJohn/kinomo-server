@@ -8,7 +8,7 @@ router.get(
   "/:username",
   catchAsync(async (req, res) => {
     const username = req.params.username;
-    const user = await User.find({ username }).populate("movies");
+    const user = await User.findOne({ username }).populate("movies");
 
     res.status(200).json(user);
   })
