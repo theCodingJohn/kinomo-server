@@ -30,6 +30,7 @@ router.post(
     res.status(200).send({
       token,
       username: user.username,
+      avatar: user?.avatar || null,
     });
   })
 );
