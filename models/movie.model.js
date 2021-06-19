@@ -9,7 +9,15 @@ const schema = new mongoose.Schema({
   },
   movie: {
     title: String,
-    year: Number,
+    release_date: String,
+    backdrop_path: String,
+    poster_path: String,
+    genres: [
+      {
+        id: Number,
+        name: String,
+      },
+    ],
     ids: {
       tmdb: Number,
     },

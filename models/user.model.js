@@ -13,6 +13,29 @@ const schema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  favorite_movies: {
+    type: [
+      {
+        movie: {
+          title: String,
+          release_date: String,
+          backdrop_path: String,
+          poster_path: String,
+          genres: [
+            {
+              _id: false,
+              id: Number,
+              name: String,
+            },
+          ],
+          ids: {
+            tmdb: Number,
+          },
+        },
+        _id: false,
+      },
+    ],
+  },
   password_hash: String,
   date_created: {
     type: Date,

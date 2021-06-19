@@ -41,7 +41,7 @@ app.use("/register", registerRouter);
 app.use("/login", loginRouter);
 app.use("/users", userRouter);
 
-app.use(middleware.unknownEndpoint);
+// app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
 
 app.use(
@@ -50,6 +50,6 @@ app.use(
   movieRouter
 );
 
-app.use(middleware.unknownEndpoint);
+// app.use(middleware.unknownEndpoint);
 
 export default app;
