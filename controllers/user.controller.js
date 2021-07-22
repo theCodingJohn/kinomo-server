@@ -6,6 +6,15 @@ import catchAsync from "../utils/catchAsync.js";
 const router = express.Router();
 
 router.get(
+  "/",
+  catchAsync(async (req, res) => {
+    const users = await User.find({});
+
+    res.status(200).json(users);
+  })
+);
+
+router.get(
   "/:username",
   catchAsync(async (req, res) => {
     const username = req.params.username;

@@ -21,6 +21,8 @@
   "devDependencies": {
     "cross-env": "^7.0.3",
     "dotenv": "^9.0.1",
-    "eslint": "^7.26.0"
+    "eslint": "^7.26.0",
+    "jest": "^27.0.6",
+    "supertest": "^6.1.4"
   }
 }
